@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<biker_equip_list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Biker.xsd">
+    <biker name="Johan"/>
+    <equip>
+        <boots>
+            <type/>
+            Sport
+            <brand/>
+            Alpine
+            <weight/>
+            3.5
+            <price/>
+            215.35
+            <size/>
+            40
+            <ventilation/>
+            true
+        </boots>
+
+        <gloves>
+            <type/>
+            Sport
+            <brand/>
+            Alpine
+            <material/>
+            Leather
+            <weight/>
+            0.6
+            <price/>
+            80
+            <size/>
+            2
+            <ventilation/>
+            true
+        </gloves>
+
+        <helmet>
+            <type/>
+            Street
+            <color_of_visor/>
+            Transparent
+            <brand/>
+            ARAI
+            <weight/>
+            1.58
+            <price/>
+            326
+            <size/>
+            58
+            <ventilation/>
+            true
+        </helmet>
+
+        <jacket>
+            <material/>
+            Cevlar
+            <protection/>
+            true
+            <brand/>
+            DAINESE
+            <weight/>
+            1.23
+            <prise/>
+            180.54
+            <size/>
+            48
+            <ventilation/>
+            true
+        </jacket>
+
+        <pants>
+            <material/>
+            Cevlar
+            <protection/>
+            true
+            <brand/>
+            DAINESE
+            <weight/>
+            1.5
+            <prise/>
+            190.15
+            <size/>
+            48
+            <ventilation/>
+            false
+        </pants>
+    </equip>
+</biker_equip_list>
