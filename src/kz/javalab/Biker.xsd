@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:attribute name="name" type="xs:string"/>
+    <xs:element name="brand" type="xs:string"/>
+    <xs:element name="weight" type="xs:double"/>
+    <xs:element name="price" type="xs:double"/>
+    <xs:element name="size" type="xs:double"/>
+    <xs:element name="ventilation" type="xs:boolean"/>
+    <xs:element name="type" type="xs:string"/>
+    <xs:element name="material" type="xs:string"/>
+    <xs:element name="colorOfVisor" type="xs:string"/>
+    <xs:element name="buildInProtection" type="xs:boolean"/>
+
+    <xs:element name="biker">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="boots" type="boots" minOccurs="1" maxOccurs="unbounded"/>
+                <xs:element name="gloves" type="gloves" minOccurs="1" maxOccurs="unbounded"/>
+                <xs:element name="helmet" type="helmet" minOccurs="1" maxOccurs="unbounded"/>
+                <xs:element name="jacket" type="jacket" minOccurs="1" maxOccurs="unbounded"/>
+                <xs:element name="pants" type="pants" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute ref="name" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:complexType name="equip">
+        <xs:sequence>
+            <xs:element ref="brand"/>
+            <xs:element ref="weight"/>
+            <xs:element ref="price"/>
+            <xs:element ref="size"/>
+            <xs:element ref="ventilation"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="boots">
+        <xs:complexContent>
+            <xs:extension base="equip">
+                <xs:sequence>
+                    <xs:element ref="type"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="gloves">
+        <xs:complexContent>
+            <xs:extension base="equip">
+                <xs:sequence>
+                    <xs:element ref="type"/>
+                    <xs:element ref="material"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="helmet">
+        <xs:complexContent>
+            <xs:extension base="equip">
+                <xs:sequence>
+                    <xs:element ref="type"/>
+                    <xs:element ref="colorOfVisor"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="jacket">
+        <xs:complexContent>
+            <xs:extension base="equip">
+                <xs:sequence>
+                    <xs:element ref="material"/>
+                    <xs:element ref="buildInProtection"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="pants">
+        <xs:complexContent>
+            <xs:extension base="equip">
+                <xs:sequence>
+                    <xs:element ref="material"/>
+                    <xs:element ref="buildInProtection"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+
+</xs:schema>

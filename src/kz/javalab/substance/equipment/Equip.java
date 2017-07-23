@@ -7,12 +7,12 @@ public abstract class Equip {
     private double size;
     private boolean ventilation;
 
-    public Equip(String mBrand, double mWeight, double mPrice, double mSize, boolean mVentilation) {
-        this.brand = mBrand;
-        this.weight = mWeight;
-        this.price = mPrice;
-        this.size = mSize;
-        this.ventilation = mVentilation;
+    public Equip(String brand, double weight, double price, double size, boolean ventilation) {
+        this.brand = brand;
+        this.weight = weight;
+        this.price = price;
+        this.size = size;
+        this.ventilation = ventilation;
     }
 
     public double getPrice() {
