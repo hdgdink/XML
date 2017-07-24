@@ -11,8 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="OOP" target="1.5" />
-      <module name="XML" target="1.7" />
+      <module name="XML" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

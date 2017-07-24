@@ -43,16 +43,13 @@ public abstract class Equip {
                 "; Цена: " + price +
                 "; Размер: " + size +
                 "; Наличие вентиляции: " + ventilation;
-
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Equip)) return false;
-
         Equip equip = (Equip) o;
-
         if (Double.compare(equip.getWeight(), getWeight()) != 0) return false;
         if (Double.compare(equip.getPrice(), getPrice()) != 0) return false;
         if (Double.compare(equip.getSize(), getSize()) != 0) return false;
