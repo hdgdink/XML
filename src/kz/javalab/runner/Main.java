@@ -9,6 +9,8 @@ package runner;
 
 import creator.EquipsCreator;
 import logic.Operation;
+import parse.SAXParser;
+import parse.Validation;
 import substance.biker.Biker;
 import substance.equipment.Equip;
 
@@ -24,7 +26,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         double sum = 0;
-
+/*
         EquipsCreator list = new EquipsCreator();
         Biker biker = list.creatEquip();
         System.out.println(NAME + biker.getName());
@@ -42,7 +44,14 @@ public class Main {
         Operation.getEquipsByPriceGap(biker, 30, 160);
         System.out.println();
         System.out.println(SORTED_LIST_BY_WEIGHT);
-        Operation.sortAmmunitionByWeight(equipList);
+        Operation.sortAmmunitionByWeight(equipList);*/
+
+        Validation validator = new Validation();
+         Boolean result = validator.validate("src\\kz\\javalab\\src\\Biker.xml","src\\kz\\javalab\\src\\Biker.xsd");
+        System.out.println(result);
+
+        SAXParser parser = new SAXParser();
+        parser.parse("src\\kz\\javalab\\src\\Biker.xml");
 
 
     }

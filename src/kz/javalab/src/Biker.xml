@@ -4,86 +4,52 @@
        xsi:noNamespaceSchemaLocation="Biker.xsd">
 
     <boots>
-        <type/>
-        Sport
-        <brand/>
-        Alpine
-        <weight/>
-        3.5
-        <price/>
-        215.35
-        <size/>
-        40
-        <ventilation/>
-        true
+        <brand>Alpine</brand>
+        <weight>3.5</weight>
+        <price>215.35</price>
+        <size>40.0</size>
+        <ventilation>true</ventilation>
+        <type>Sport</type>
     </boots>
 
     <gloves>
-        <type/>
-        Sport
-        <brand/>
-        Alpine
-        <material/>
-        Leather
-        <weight/>
-        0.6
-        <price/>
-        80
-        <size/>
-        2
-        <ventilation/>
-        true
+        <brand>Alpine</brand>
+        <weight>0.6</weight>
+        <price>80.0</price>
+        <size>2.0</size>
+        <ventilation>true</ventilation>
+        <type>Sport</type>
+        <material>Leather</material>
     </gloves>
 
     <helmet>
-        <type/>
-        Street
-        <colorOfVisor/>
-        Transparent
-        <brand/>
-        ARAI
-        <weight/>
-        1.58
-        <price/>
-        326
-        <size/>
-        58
-        <ventilation/>
-        true
+        <brand>ARAI</brand>
+        <weight>1.58</weight>
+        <price>326.0</price>
+        <size>58.0</size>
+        <ventilation>true</ventilation>
+        <type>Street</type>
+        <colorOfVisor>Transparent</colorOfVisor>
     </helmet>
 
     <jacket>
-        <material/>
-        Cevlar
-        <buildInProtection/>
-        true
-        <brand/>
-        DAINESE
-        <weight/>
-        1.23
-        <price/>
-        180.54
-        <size/>
-        48
-        <ventilation/>
-        true
+        <brand>DAINESE</brand>
+        <weight>1.23</weight>
+        <price>180.54</price>
+        <size>48.0</size>
+        <ventilation>true</ventilation>
+        <material>Cevlar</material>
+        <buildInProtection>true</buildInProtection>
     </jacket>
 
     <pants>
-        <material/>
-        Cevlar
-        <buildInProtection/>
-        true
-        <brand/>
-        DAINESE
-        <weight/>
-        1.5
-        <price/>
-        190.15
-        <size/>
-        48
-        <ventilation/>
-        false
+        <brand>DAINESE</brand>
+        <weight>1.5</weight>
+        <price>190.15</price>
+        <size>48.0</size>
+        <ventilation>false</ventilation>
+        <material>Cevlar</material>
+        <buildInProtection>true</buildInProtection>
     </pants>
 
 </biker>
