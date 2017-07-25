@@ -34,4 +34,22 @@ public class Biker {
     public String toString() {
         return BIKER + NAME + name + SIGN + EQIUPS + equips;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Biker)) return false;
+
+        Biker biker = (Biker) o;
+
+        if (!getName().equals(biker.getName())) return false;
+        return equips.equals(biker.equips);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getName().hashCode();
+        result = 31 * result + equips.hashCode();
+        return result;
+    }
 }

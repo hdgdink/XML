@@ -44,8 +44,8 @@ public class SAXParser extends DefaultHandler {
     private Biker biker = null;
     private String thisElement = "";
 
-    public Biker parse(String pathXML) {
 
+    public Biker parse(String pathXML) {
         try {
             SAXParserFactory factory = SAXParserFactory.newInstance();
             factory.setValidating(false);
@@ -71,7 +71,7 @@ public class SAXParser extends DefaultHandler {
         }
     }
 
-        @Override
+    @Override
     public void characters(char[] ch, int start, int length) throws SAXException {
         if (!String.valueOf(ch, start, length).trim().equals("")) {
             switch (thisElement) {
@@ -129,8 +129,7 @@ public class SAXParser extends DefaultHandler {
 
     }
 
-    @Override
-    public void endDocument() throws SAXException {
-        System.out.println(biker.toString());
+    public Biker getBiker() {
+        return biker;
     }
 }

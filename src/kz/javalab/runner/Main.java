@@ -10,6 +10,7 @@ package runner;
 import creator.EquipsCreator;
 import logic.Operation;
 import parse.SAXParser;
+import parse.StAXParser;
 import parse.Validation;
 import substance.biker.Biker;
 import substance.equipment.Equip;
@@ -49,13 +50,21 @@ public class Main {
         System.out.println();
         System.out.println(SORTED_LIST_BY_WEIGHT);
         Operation.sortAmmunitionByWeight(equipList);*/
-
         Validation validator = new Validation();
         Boolean result = validator.validate(XML_PATH, XSD_PATH);
         System.out.println(RESULT + result);
 
-        SAXParser parser = new SAXParser();
-        parser.parse(XML_PATH);
+        SAXParser parserSax = new SAXParser();
+        parserSax.parse(XML_PATH);
+        StAXParser parserStax = new StAXParser();
+        parserStax.parse(XML_PATH);
+        System.out.println(parserStax.getBiker().equals(parserSax.getBiker()));
+
+
+        System.out.println(parserSax.getBiker().toString());
+        System.out.println(parserStax.getBiker().toString());
+
+
 
 
     }

@@ -1,7 +1,7 @@
 package substance.equipment;
 
 public class Pants extends Equip {
-    private static final String JACKET = "\n- Jacket: ";
+    private static final String PANTS = "\n- Pants: ";
     private static final String MATERIAL = "Material: ";
     private static final String BUILD_IN_PROTECTION = "; Build-in protection: ";
     private static final String SIGN = "; ";
@@ -18,6 +18,6 @@ public class Pants extends Equip {
 
     @Override
     public String toString() {
-        return JACKET + MATERIAL + material + BUILD_IN_PROTECTION + buildInProtection + SIGN + super.toString();
+        return PANTS + MATERIAL + material + BUILD_IN_PROTECTION + buildInProtection + SIGN + super.toString();
     }
 }
