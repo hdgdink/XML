@@ -62,9 +62,8 @@ public class StAXParser {
             switch (type) {
                 case XMLStreamConstants.START_ELEMENT:
                     thisElement = streamReader.getLocalName();
-                    if (thisElement.equals(BIKER)) {
+                    if (thisElement.equals(BIKER))
                         biker = new Biker();
-                    }
                     if (streamReader.getAttributeValue(0) != null)
                         biker.setName(streamReader.getAttributeValue(0));
                     break;

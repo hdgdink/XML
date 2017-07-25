@@ -48,7 +48,6 @@ public class SAXParser extends DefaultHandler {
     public Biker parse(String pathXML) {
         try {
             SAXParserFactory factory = SAXParserFactory.newInstance();
-            factory.setValidating(false);
             javax.xml.parsers.SAXParser parser = factory.newSAXParser();
             parser.parse(new File(pathXML), this);
         } catch (ParserConfigurationException e) {

@@ -9,6 +9,7 @@ package runner;
 
 import creator.EquipsCreator;
 import logic.Operation;
+import parse.DOMParser;
 import parse.SAXParser;
 import parse.StAXParser;
 import parse.Validation;
@@ -54,15 +55,19 @@ public class Main {
         Boolean result = validator.validate(XML_PATH, XSD_PATH);
         System.out.println(RESULT + result);
 
-        SAXParser parserSax = new SAXParser();
+      SAXParser parserSax = new SAXParser();
         parserSax.parse(XML_PATH);
         StAXParser parserStax = new StAXParser();
         parserStax.parse(XML_PATH);
         System.out.println(parserStax.getBiker().equals(parserSax.getBiker()));
 
+        DOMParser parserDom = new DOMParser();
+        parserDom.parse(XML_PATH);
 
-        System.out.println(parserSax.getBiker().toString());
-        System.out.println(parserStax.getBiker().toString());
+
+
+       // System.out.println(parserSax.getBiker().toString());
+       // System.out.println(parserStax.getBiker().toString());
 
 
 
