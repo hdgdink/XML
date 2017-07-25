@@ -6,6 +6,12 @@ public abstract class Equip {
     private double price;
     private double size;
     private boolean ventilation;
+    private static final String BRAND = " Brand: ";
+    private static final String WEIGHT = "; Weight: ";
+    private static final String PRICE = "; Price: ";
+    private static final String SIZE = "; Size: ";
+    private static final String VENTILATION = "; Ventilation: ";
+    private static final String SIGN = "; ";
 
     public Equip(String brand, double weight, double price, double size, boolean ventilation) {
         this.brand = brand;
@@ -37,12 +43,7 @@ public abstract class Equip {
 
     @Override
     public String toString() {
-        return " " +
-                "Производитель: " + brand +
-                "; Вес: " + weight +
-                "; Цена: " + price +
-                "; Размер: " + size +
-                "; Наличие вентиляции: " + ventilation;
+        return BRAND + brand + WEIGHT + weight + PRICE + price + SIZE + size + VENTILATION + ventilation+SIGN;
     }
 
     @Override

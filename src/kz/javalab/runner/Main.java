@@ -1,10 +1,10 @@
 package runner;
 
 /**
- Определить иерархию амуниции. Экипировать мотоцикли-
- ста. Подсчитать стоимость. Провести сортировку амуниции на основе веса.
- Найти элементы амуниции, соответствующие заданному диапазону пара-
- метров цены.
+ * Определить иерархию амуниции. Экипировать мотоцикли-
+ * ста. Подсчитать стоимость. Провести сортировку амуниции на основе веса.
+ * Найти элементы амуниции, соответствующие заданному диапазону пара-
+ * метров цены.
  */
 
 import creator.EquipsCreator;
@@ -18,10 +18,14 @@ import java.io.IOException;
 import java.util.List;
 
 public class Main {
-    final static   String NAME = "Name of biker: ";
-    final static String FULL_PRISE = "Full prise of equipment list: ";
-    final static String FILTERED_BY_GAP = "Filtered equipment list by prise gap:";
-    final static String SORTED_LIST_BY_WEIGHT = "Get sorted list of equipments by weight: ";
+    private static final String NAME = "Name of biker: ";
+    private static final String FULL_PRISE = "Full prise of equipment list: ";
+    private static final String FILTERED_BY_GAP = "Filtered equipment list by prise gap:";
+    private static final String SORTED_LIST_BY_WEIGHT = "Get sorted list of equipments by weight: ";
+    private static final String XML_PATH = "src\\kz\\javalab\\src\\Biker.xml";
+    private static final String XSD_PATH = "src\\kz\\javalab\\src\\Biker.xsd";
+    private static final String RESULT = "Result of validation: ";
+
 
     public static void main(String[] args) throws IOException {
 
@@ -47,12 +51,11 @@ public class Main {
         Operation.sortAmmunitionByWeight(equipList);*/
 
         Validation validator = new Validation();
-         Boolean result = validator.validate("src\\kz\\javalab\\src\\Biker.xml","src\\kz\\javalab\\src\\Biker.xsd");
-        System.out.println(result);
+        Boolean result = validator.validate(XML_PATH, XSD_PATH);
+        System.out.println(RESULT + result);
 
         SAXParser parser = new SAXParser();
-        parser.parse("src\\kz\\javalab\\src\\Biker.xml");
-
+        parser.parse(XML_PATH);
 
 
     }

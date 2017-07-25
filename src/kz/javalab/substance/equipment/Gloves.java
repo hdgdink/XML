@@ -1,6 +1,10 @@
 package substance.equipment;
 
 public class Gloves extends Equip {
+    private static final String GLOVES = "\n- Gloves: ";
+    private static final String TYPE = "Type: ";
+    private static final String MATERIAL = "; Material: ";
+    private static final String SIGN = "; ";
     private String type;
     private String material;
 
@@ -11,13 +15,9 @@ public class Gloves extends Equip {
         this.type = type;
     }
 
-
     @Override
     public String toString() {
-        return "Перчатки: " + "Тип: "
-                + type + "; Материал: "
-                + material + "; "
-                + super.toString();
+        return GLOVES + TYPE + type + MATERIAL + material + SIGN + super.toString();
     }
 
 

@@ -1,6 +1,10 @@
 package substance.equipment;
 
 public class Helmet extends Equip {
+    private static final String HELMET = "\n- Helmet: ";
+    private static final String TYPE = "Type: ";
+    private static final String COLOR_OF_VISOR = ";Color of visor: ";
+    private static final String SIGN = "; ";
     private String type;
     private String colorOfVisor;
 
@@ -13,9 +17,6 @@ public class Helmet extends Equip {
 
     @Override
     public String toString() {
-        return "Шлем: " +
-                "Тип: " + type + "; Цвет щитка: "
-                + colorOfVisor + "; "
-                + super.toString();
+        return HELMET + TYPE + type + COLOR_OF_VISOR + colorOfVisor + SIGN + super.toString();
     }
 }

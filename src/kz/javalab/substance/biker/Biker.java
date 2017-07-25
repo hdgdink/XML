@@ -6,10 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Biker {
-    final String BIKER = "Biker ";
-    final String NAME = "Name = '";
-    final String EQIUPS = "\n List of equips:\n";
-    final String SIGN = "\'";
+    private static final String BIKER = "Biker ";
+    private static final String NAME = "Name = '";
+    private static final String EQIUPS = "\n List of equips:\n";
+    private static final String SIGN = "\'";
     private String name;
 
     private List<Equip> equips = new ArrayList<Equip>();
