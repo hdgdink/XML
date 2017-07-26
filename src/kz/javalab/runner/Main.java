@@ -26,13 +26,13 @@ public class Main {
     private static final String SORTED_LIST_BY_WEIGHT = "Get sorted list of equipments by weight: ";
     private static final String XML_PATH = "src\\kz\\javalab\\src\\Biker.xml";
     private static final String XSD_PATH = "src\\kz\\javalab\\src\\Biker.xsd";
-    private static final String RESULT = "Result of validation: ";
-
+    private static final String RESULT_XSD = "Result of validation by XSD: ";
+    private static final String RESULT_SAX_STAX = "Comparison result SAX with StAX: ";
 
     public static void main(String[] args) throws IOException {
-
-        double sum = 0;
 /*
+        double sum = 0;
+
         EquipsCreator list = new EquipsCreator();
         Biker biker = list.creatEquip();
         System.out.println(NAME + biker.getName());
@@ -53,23 +53,20 @@ public class Main {
         Operation.sortAmmunitionByWeight(equipList);*/
         Validation validator = new Validation();
         Boolean result = validator.validate(XML_PATH, XSD_PATH);
-        System.out.println(RESULT + result);
+        System.out.println(RESULT_XSD + result);
 
-      SAXParser parserSax = new SAXParser();
+        SAXParser parserSax = new SAXParser();
         parserSax.parse(XML_PATH);
         StAXParser parserStax = new StAXParser();
         parserStax.parse(XML_PATH);
-        System.out.println(parserStax.getBiker().equals(parserSax.getBiker()));
+        System.out.println(RESULT_SAX_STAX + parserStax.getBiker().equals(parserSax.getBiker()));
 
         DOMParser parserDom = new DOMParser();
         parserDom.parse(XML_PATH);
 
 
-
-       // System.out.println(parserSax.getBiker().toString());
-       // System.out.println(parserStax.getBiker().toString());
-
-
+        // System.out.println(parserSax.getBiker().toString());
+        // System.out.println(parserStax.getBiker().toString());
 
 
     }

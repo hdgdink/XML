@@ -54,12 +54,12 @@ public class DOMParser {
         try {
             DocumentBuilder xml = DocumentBuilderFactory.newInstance().newDocumentBuilder();
             Document doc = xml.parse(new File(pathXML));
-            Node rootel = doc.getDocumentElement();
+            root = doc.getDocumentElement();
             biker = new Biker();
-            if (rootel.getAttributes().equals("name"))
-                biker.setName(rootel.getAttributes().toString());
 
-            System.out.println(biker.toString());
+                biker.setName(root.getAttributes().toString());
+
+           // System.out.println(biker.toString());
 
         } catch (
                 Exception e)
