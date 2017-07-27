@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-
     <xs:attribute name="name" type="xs:string"/>
     <xs:element name="brand" type="xs:string"/>
     <xs:element name="weight" type="xs:double"/>
@@ -11,7 +10,6 @@
     <xs:element name="material" type="xs:string"/>
     <xs:element name="colorOfVisor" type="xs:string"/>
     <xs:element name="buildInProtection" type="xs:boolean"/>
-
     <xs:element name="biker">
         <xs:complexType>
             <xs:sequence>
@@ -24,8 +22,6 @@
             <xs:attribute ref="name" use="required"/>
         </xs:complexType>
     </xs:element>
-
-
     <xs:complexType name="equip">
         <xs:sequence>
             <xs:element ref="brand"/>
@@ -35,7 +31,6 @@
             <xs:element ref="ventilation"/>
         </xs:sequence>
     </xs:complexType>
-
     <xs:complexType name="boots">
         <xs:complexContent>
             <xs:extension base="equip">
@@ -45,7 +40,6 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="gloves">
         <xs:complexContent>
             <xs:extension base="equip">
@@ -56,7 +50,6 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="helmet">
         <xs:complexContent>
             <xs:extension base="equip">
@@ -67,7 +60,6 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="jacket">
         <xs:complexContent>
             <xs:extension base="equip">
@@ -78,7 +70,6 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
     <xs:complexType name="pants">
         <xs:complexContent>
             <xs:extension base="equip">
@@ -89,6 +80,4 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
-
 </xs:schema>

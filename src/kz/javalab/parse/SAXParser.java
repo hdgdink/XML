@@ -31,6 +31,7 @@ public class SAXParser extends DefaultHandler {
     private static final String HELMET = "helmet";
     private static final String JACKET = "jacket";
     private static final String PANTS = "pants";
+    private static final String EMPTY = "";
     private String brand = "";
     private double weight;
     private double price;

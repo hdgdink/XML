@@ -2,7 +2,6 @@
 <biker name="Johan"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="Biker.xsd">
-
     <boots>
         <brand>Alpine</brand>
         <weight>3.5</weight>
@@ -11,7 +10,6 @@
         <ventilation>true</ventilation>
         <type>Sport</type>
     </boots>
-
     <gloves>
         <brand>Alpine</brand>
         <weight>0.6</weight>
@@ -21,7 +19,6 @@
         <type>Sport</type>
         <material>Leather</material>
     </gloves>
-
     <helmet>
         <brand>ARAI</brand>
         <weight>1.58</weight>
@@ -31,7 +28,6 @@
         <type>Street</type>
         <colorOfVisor>Transparent</colorOfVisor>
     </helmet>
-
     <jacket>
         <brand>DAINESE</brand>
         <weight>1.23</weight>
@@ -41,7 +37,6 @@
         <material>Cevlar</material>
         <buildInProtection>true</buildInProtection>
     </jacket>
-
     <pants>
         <brand>DAINESE</brand>
         <weight>1.5</weight>
@@ -51,5 +46,4 @@
         <material>Cevlar</material>
         <buildInProtection>true</buildInProtection>
     </pants>
-
 </biker>

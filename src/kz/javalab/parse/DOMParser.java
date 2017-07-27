@@ -4,15 +4,12 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
 import substance.biker.Biker;
-import substance.equipment.Boots;
+import substance.equipment.*;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
-import java.io.IOException;
 
 /**
  * Created by HdgDink on 24.07.2017.
@@ -43,31 +40,97 @@ public class DOMParser {
     private String material = "";
     private String colorOfVisor = "";
     private boolean buildInProtection;
-
     private Biker biker = null;
     private String thisElement = "";
+    String tagName = "";
     private Node root = null;
-
-
+    Document doc = null;
 
     public Biker parse(String pathXML) {
+
         try {
             DocumentBuilder xml = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-            Document doc = xml.parse(new File(pathXML));
+            doc = xml.parse(new File(pathXML));
             root = doc.getDocumentElement();
-            biker = new Biker();
-
-                biker.setName(root.getAttributes().toString());
-
-           // System.out.println(biker.toString());
-
-        } catch (
-                Exception e)
-
-        {
+            thisElement = doc.getDocumentElement().getNodeName();
+            if (thisElement == BIKER) {
+                thisElement = doc.getDocumentElement().getAttribute(NAME);
+                biker = new Biker();
+                biker.setName(thisElement);
+            }
+            NodeList equipList = root.getChildNodes();
+            addEquip(equipList,root);
+        } catch (Exception e) {
             e.printStackTrace();
         }
+        return biker;
+    }
 
+    private void addEquip(NodeList equipList, Node root) {
+        for (int i = 0; i < equipList.getLength(); i++) {
+            tagName = equipList.item(i).getNodeName();
+            if (equipList.item(i).getNodeType() == Node.ELEMENT_NODE) {
+                NodeList specList = root.getChildNodes().item(i).getChildNodes();
+                specsOfEquip(specList);
+            }
+            switch (tagName) {
+                case BOOTS:
+                    this.biker.getEquipList().add(new Boots(type, brand, weight, price, size, ventilation));
+                    break;
+                case GLOVES:
+                    this.biker.getEquipList().add(new Gloves(type, material, brand, weight, price, size, ventilation));
+                    break;
+                case HELMET:
+                    this.biker.getEquipList().add(new Helmet(type, colorOfVisor, brand, weight, price, size, ventilation));
+                    break;
+                case JACKET:
+                    this.biker.getEquipList().add(new Jacket(material, buildInProtection, brand, weight, price, size, ventilation));
+                    break;
+                case PANTS:
+                    this.biker.getEquipList().add(new Pants(material, buildInProtection, brand, weight, price, size, ventilation));
+                    break;
+            }
+        }
+    }
+
+    private void specsOfEquip(NodeList specList) {
+        for (int j = 0; j < specList.getLength(); j++) {
+            if (specList.item(j).getNodeType() == Node.ELEMENT_NODE) {
+                Node childElement = (Element) specList.item(j);
+                switch (childElement.getNodeName()) {
+                    case BRAND:
+                        this.brand = childElement.getTextContent();
+                        break;
+                    case TYPE:
+                        this.type = childElement.getTextContent();
+                        break;
+                    case VENTILATION:
+                        this.ventilation = Boolean.parseBoolean(childElement.getTextContent());
+                        break;
+                    case WEIGHT:
+                        this.weight = Double.parseDouble(childElement.getTextContent());
+                        break;
+                    case PRICE:
+                        this.price = Double.parseDouble(childElement.getTextContent());
+                        break;
+                    case SIZE:
+                        this.size = Double.parseDouble(childElement.getTextContent());
+                        break;
+                    case MATERIAL:
+                        this.material =childElement.getTextContent();
+                        break;
+                    case COLOR_OF_VISOR:
+                        this.colorOfVisor = childElement.getTextContent();
+                        break;
+                    case BUILD_IN_PROTECTION:
+                        this.buildInProtection = Boolean.parseBoolean(childElement.getTextContent());
+                        break;
+                }
+            }
+        }
+    }
+
+    public Biker getBiker() {
         return biker;
     }
 }
