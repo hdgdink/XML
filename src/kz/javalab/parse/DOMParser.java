@@ -59,7 +59,7 @@ public class DOMParser {
                 biker.setName(thisElement);
             }
             NodeList equipList = root.getChildNodes();
-            addEquip(equipList,root);
+            addEquip(equipList, root);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -117,7 +117,7 @@ public class DOMParser {
                         this.size = Double.parseDouble(childElement.getTextContent());
                         break;
                     case MATERIAL:
-                        this.material =childElement.getTextContent();
+                        this.material = childElement.getTextContent();
                         break;
                     case COLOR_OF_VISOR:
                         this.colorOfVisor = childElement.getTextContent();

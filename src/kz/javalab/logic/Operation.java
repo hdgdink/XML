@@ -29,7 +29,7 @@ public class Operation {
             sum += equipList.get(i).getPrice();
         }
         System.out.println();
-        System.out.println(FULL_PRISE + sum );
+        System.out.println(FULL_PRISE + sum);
         return equipList;
 
     }

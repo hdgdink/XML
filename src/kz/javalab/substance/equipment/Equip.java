@@ -43,7 +43,7 @@ public abstract class Equip {
 
     @Override
     public String toString() {
-        return BRAND + brand + WEIGHT + weight + PRICE + price + SIZE + size + VENTILATION + ventilation+SIGN;
+        return BRAND + brand + WEIGHT + weight + PRICE + price + SIZE + size + VENTILATION + ventilation + SIGN;
     }
 
     @Override

@@ -17,8 +17,6 @@ import java.io.IOException;
 
 
 public class Main {
-    private static final String NAME = "Name of biker: ";
-    private static final String FULL_PRISE = "Full prise of equipment list: ";
     private static final String FILTERED_BY_GAP = "Filtered equipment list by prise gap:";
     private static final String SORTED_LIST_BY_WEIGHT = "Get sorted list of equipments by weight: ";
     private static final String XML_PATH = "src\\kz\\javalab\\src\\Biker.xml";
